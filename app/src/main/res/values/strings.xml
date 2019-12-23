@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">PinIt</string>
+    <string name="findButtonText">Find</string>
+    <string name="pinButtonText">Pin</string>
+
+</resources>
