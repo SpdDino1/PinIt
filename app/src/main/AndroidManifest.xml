@@ -3,6 +3,7 @@
     package="com.example.pinit">
 
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.autofocus" />
 
@@ -13,8 +14,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PinActivity.PinActivity" android:configChanges="orientation"
-            android:screenOrientation="landscape"></activity>
+        <activity android:name=".AngleDialogBox.AngleDialogBox"></activity>
+        <activity
+            android:name=".PinActivity.PinActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation"

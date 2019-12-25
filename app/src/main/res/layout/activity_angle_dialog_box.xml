@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".AngleDialogBox.AngleDialogBox"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:id="@+id/dialogBoxRowOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pitchAngleDialogText"
+            android:layout_gravity="center|start"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pitchAngleDialogText"
+            android:layout_gravity="center|end"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter Pitch"
+            android:digits="@string/dialogValidCharacters"
+            android:layout_gravity="center|end"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialogBoxRowTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rollAngleDialogText"
+            android:layout_gravity="center|start"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pitchAngleDialogText"
+            android:layout_gravity="center|end"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter Pitch"
+            android:digits="@string/dialogValidCharacters"
+            android:layout_gravity="center|end"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialogButtonText"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:onClick="onDialogButtonClick"/>
+
+</LinearLayout>
