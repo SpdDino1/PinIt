@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.example.pinit.PinActivity.SensorManager.SensorAngleResult;
 import com.example.pinit.PinActivity.SensorManager.SensorManager;
 import com.example.pinit.R;
 
@@ -21,10 +22,15 @@ public class PinActivity extends AppCompatActivity {
     }
 
     public void onCaptureButtonClick(View v){
-        SensorManager.startSensors(this);
+        new SensorManager(this, true, new SensorAngleResult() {
+            @Override
+            public void passResult(int pitch, int roll) {
+                displayValues(pitch,roll);
+            }
+        });
     }
 
-    public static void displayValues(int pitch,int roll){
+    public void displayValues(int pitch,int roll){
         Log.d("testLogMessage","Pitch = "+pitch);
         Log.d("testLogMessage","Roll = "+roll);
     }
