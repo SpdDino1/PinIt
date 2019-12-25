@@ -42,12 +42,12 @@ public class PinActivity extends AppCompatActivity {
                                 LinearLayout rowOne= dialogBaseView.findViewById(R.id.dialogBoxRowOne);
                                 rowOne.removeViewAt(2);
                                 TextView pitchTextView= (TextView)rowOne.getChildAt(1);
-                                pitchTextView.setText(String.valueOf(pitch));
+                                pitchTextView.setText(String.valueOf(pitch+180));
 
                                 LinearLayout rowTwo= dialogBaseView.findViewById(R.id.dialogBoxRowTwo);
                                 rowTwo.removeViewAt(2);
                                 TextView rollTextView= (TextView)rowTwo.getChildAt(1);
-                                rollTextView.setText(String.valueOf(roll));
+                                rollTextView.setText(String.valueOf(roll+180));
                             }
                         },
                         new DialogBoxButtonAction() {

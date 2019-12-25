@@ -37,6 +37,7 @@
             android:layout_height="wrap_content"
             android:hint="Enter Pitch"
             android:digits="@string/dialogValidCharacters"
+            android:inputType="number"
             android:layout_gravity="center|end"
             android:layout_weight="1"
             android:layout_margin="10dp"
@@ -71,8 +72,9 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Enter Pitch"
+            android:hint="Enter Roll"
             android:digits="@string/dialogValidCharacters"
+            android:inputType="number"
             android:layout_gravity="center|end"
             android:layout_weight="1"
             android:layout_margin="10dp"

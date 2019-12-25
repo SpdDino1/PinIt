@@ -33,6 +33,7 @@
         android:text="@string/findButtonText"
         android:layout_margin="15dp"
         android:layout_gravity="center"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false"
+        android:onClick="onFindButtonClick"/>
 
 </LinearLayout>

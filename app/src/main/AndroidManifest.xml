@@ -14,7 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AngleDialogBox.AngleDialogBox"></activity>
+        <activity android:name=".FindActivity.FindActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape" />
+        <activity android:name=".AngleDialogBox.AngleDialogBox" />
         <activity
             android:name=".PinActivity.PinActivity"
             android:configChanges="orientation"
