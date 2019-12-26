@@ -5,15 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 
+import com.example.pinit.FindActivity.DrawingTools.DrawingCanvas;
+import com.example.pinit.FindActivity.DrawingTools.DrawingManager;
 import com.example.pinit.R;
 import com.example.pinit.SensorManager.SensorAngleResult;
 import com.example.pinit.SensorManager.SensorManager;
 
 public class FindActivity extends AppCompatActivity {
-    private int offsetAzimuth; //Offset has 180 added to it
-    private int offsetRoll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,15 +24,18 @@ public class FindActivity extends AppCompatActivity {
         setContentView(R.layout.activity_find);
 
         Intent intent=getIntent();
-        offsetAzimuth=intent.getIntExtra("azimuth",0);
-        offsetRoll=intent.getIntExtra("roll",0);
+        int offsetAzimuth=intent.getIntExtra("azimuth",0); //Offset has 180 deg already added
+        int offsetRoll=intent.getIntExtra("roll",0);
+
+        DrawingCanvas canvas = findViewById(R.id.drawingCanvas);
+        final DrawingManager manager = new DrawingManager(canvas,offsetAzimuth,offsetRoll);
 
         new SensorManager(this, false, new SensorAngleResult() {
             @Override
             public void passResult(int azimuth, int roll) {
-                Log.d("testLogMessage","azimuth: "+(azimuth+180));
-                Log.d("testLogMessage","Roll: "+(roll+180));
+                manager.drawCircle(azimuth+180,roll+180);
             }
         });
     }
+
 }
