@@ -4,7 +4,7 @@
     <string name="pinButtonText">Pin</string>
     <string name="pinActivityMarker">+</string>
 
-    <string name="pitchAngleDialogText">Pitch :</string>
+    <string name="azimuthAngleDialogText">Azimuth :</string>
     <string name="rollAngleDialogText">Roll :</string>
     <string name="dialogButtonText">Ok</string>
     <string name="dialogValidCharacters">0,1,2,3,4,5,6,7,8,9,-</string>

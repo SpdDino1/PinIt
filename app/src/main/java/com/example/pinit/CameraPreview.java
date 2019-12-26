@@ -1,4 +1,4 @@
-package com.example.pinit.PinActivity;
+package com.example.pinit;
 
 import android.content.Context;
 import android.hardware.Camera;

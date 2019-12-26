@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".PinActivity.PinActivity">
 
-    <com.example.pinit.PinActivity.CameraPreview
+    <com.example.pinit.CameraPreview
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

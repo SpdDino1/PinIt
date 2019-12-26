@@ -34,12 +34,12 @@ public class DialogBoxHelper {
                     public void onDialogBoxButtonClick() {
                         //Get edit texts
                         LinearLayout rowOne =dialogBoxBaseView.findViewById(R.id.dialogBoxRowOne);
-                        String pitchString=((EditText)rowOne.getChildAt(1)).getText().toString();
-                        if(pitchString.length()==0){
-                            Toast.makeText(context, "Enter Pitch Angle", Toast.LENGTH_LONG).show();
+                        String azimuthString=((EditText)rowOne.getChildAt(1)).getText().toString();
+                        if(azimuthString.length()==0){
+                            Toast.makeText(context, "Enter Azimuth Angle", Toast.LENGTH_LONG).show();
                             return;
                         }
-                        int pitch = Integer.parseInt(pitchString);
+                        int azimuth = Integer.parseInt(azimuthString);
 
                         LinearLayout rowTwo= dialogBoxBaseView.findViewById(R.id.dialogBoxRowTwo);
                         String rollString=((EditText)rowTwo.getChildAt(1)).getText().toString();
@@ -50,8 +50,8 @@ public class DialogBoxHelper {
                         int roll = Integer.parseInt(rollString);
 
                         //Verify
-                        if(pitch<0 || pitch>360){
-                            Toast.makeText(context, "Invalid Pitch Angle", Toast.LENGTH_LONG).show();
+                        if(azimuth<0 || azimuth>360){
+                            Toast.makeText(context, "Invalid Azimuth Angle", Toast.LENGTH_LONG).show();
                             return;
                         }
                         else if(roll<0 || roll>180){
@@ -62,7 +62,9 @@ public class DialogBoxHelper {
                         //Open new activity
                         dialogBox.dismiss();
                         Intent intent = new Intent(context, FindActivity.class);
-                        context.startActivity(intent); //TODO Send pitch and roll angles to activity
+                        intent.putExtra("azimuth",azimuth);
+                        intent.putExtra("roll",roll);
+                        context.startActivity(intent);
                     }
 
                     @Override
