@@ -1,24 +1,20 @@
 package com.example.pinit.AngleDialogBox;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pinit.R;
 
 public class AngleDialogBox extends Dialog {
-    private DialogBoxViewCustomizer dialogBoxViewCustomizer;
-    public DialogBoxButtonAction dialogBoxButtonAction;
+    public AngleDialogBoxInterface angleDialogBoxInterface;
 
-    public AngleDialogBox(@NonNull Context context,DialogBoxViewCustomizer dialogBoxViewCustomizer,DialogBoxButtonAction dialogBoxButtonAction) {
+    public AngleDialogBox(@NonNull Context context,AngleDialogBoxInterface angleDialogBoxInterface) {
         super(context);
-        this.dialogBoxViewCustomizer=dialogBoxViewCustomizer;
-        this.dialogBoxButtonAction=dialogBoxButtonAction;
+        this.angleDialogBoxInterface = angleDialogBoxInterface;
     }
 
     @Override
@@ -27,6 +23,6 @@ public class AngleDialogBox extends Dialog {
         setContentView(R.layout.activity_angle_dialog_box);
 
         ViewGroup contentView=(ViewGroup) ((ViewGroup) this.findViewById(android.R.id.content)).getChildAt(0); //Dialog baseView
-        dialogBoxViewCustomizer.customizeDialogBox(contentView);
+        angleDialogBoxInterface.customizeDialogBox(contentView);
     }
 }

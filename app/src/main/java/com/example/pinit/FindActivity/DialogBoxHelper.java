@@ -8,8 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.pinit.AngleDialogBox.AngleDialogBox;
-import com.example.pinit.AngleDialogBox.DialogBoxButtonAction;
-import com.example.pinit.AngleDialogBox.DialogBoxViewCustomizer;
+import com.example.pinit.AngleDialogBox.AngleDialogBoxInterface;
 import com.example.pinit.R;
 
 /*
@@ -30,18 +29,7 @@ public class DialogBoxHelper {
     public void showDialogBoxForFindActivity(){
         dialogBox=new AngleDialogBox(
                 context,
-                new DialogBoxViewCustomizer() {
-                    @Override
-                    public void customizeDialogBox(ViewGroup dialogBaseView) {
-                        LinearLayout rowOne= dialogBaseView.findViewById(R.id.dialogBoxRowOne);
-                        rowOne.removeViewAt(1);
-
-                        LinearLayout rowTwo= dialogBaseView.findViewById(R.id.dialogBoxRowTwo);
-                        rowTwo.removeViewAt(1);
-                        dialogBoxBaseView=dialogBaseView;
-                    }
-                },
-                new DialogBoxButtonAction() {
+                new AngleDialogBoxInterface() {
                     @Override
                     public void onDialogBoxButtonClick() {
                         //Get edit texts
@@ -74,7 +62,17 @@ public class DialogBoxHelper {
                         //Open new activity
                         dialogBox.dismiss();
                         Intent intent = new Intent(context, FindActivity.class);
-                        context.startActivity(intent);
+                        context.startActivity(intent); //TODO Send pitch and roll angles to activity
+                    }
+
+                    @Override
+                    public void customizeDialogBox(ViewGroup dialogBaseView) {
+                        LinearLayout rowOne= dialogBaseView.findViewById(R.id.dialogBoxRowOne);
+                        rowOne.removeViewAt(1);
+
+                        LinearLayout rowTwo= dialogBaseView.findViewById(R.id.dialogBoxRowTwo);
+                        rowTwo.removeViewAt(1);
+                        dialogBoxBaseView=dialogBaseView;
                     }
                 }
         );
@@ -82,7 +80,7 @@ public class DialogBoxHelper {
     }
 
     public void triggerDialogboxClick(){
-        dialogBox.dialogBoxButtonAction.onDialogBoxButtonClick();
+        dialogBox.angleDialogBoxInterface.onDialogBoxButtonClick();
     }
 
 }

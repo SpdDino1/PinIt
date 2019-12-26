@@ -10,8 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.pinit.AngleDialogBox.AngleDialogBox;
-import com.example.pinit.AngleDialogBox.DialogBoxButtonAction;
-import com.example.pinit.AngleDialogBox.DialogBoxViewCustomizer;
+import com.example.pinit.AngleDialogBox.AngleDialogBoxInterface;
 import com.example.pinit.PinActivity.SensorManager.SensorAngleResult;
 import com.example.pinit.PinActivity.SensorManager.SensorManager;
 import com.example.pinit.R;
@@ -36,9 +35,15 @@ public class PinActivity extends AppCompatActivity {
                 //Display dialog box
                 dialogBox = new AngleDialogBox(
                         PinActivity.this,
-                        new DialogBoxViewCustomizer() {
+                        new AngleDialogBoxInterface() {
+                            @Override
+                            public void onDialogBoxButtonClick() {
+                                dialogBox.dismiss();
+                            }
+
                             @Override
                             public void customizeDialogBox(ViewGroup dialogBaseView) {
+                                //TODO Check azimuth and roll angle
                                 LinearLayout rowOne= dialogBaseView.findViewById(R.id.dialogBoxRowOne);
                                 rowOne.removeViewAt(2);
                                 TextView pitchTextView= (TextView)rowOne.getChildAt(1);
@@ -49,12 +54,6 @@ public class PinActivity extends AppCompatActivity {
                                 TextView rollTextView= (TextView)rowTwo.getChildAt(1);
                                 rollTextView.setText(String.valueOf(roll+180));
                             }
-                        },
-                        new DialogBoxButtonAction() {
-                            @Override
-                            public void onDialogBoxButtonClick() {
-                                dialogBox.dismiss();
-                            }
                         }
                 );
                 dialogBox.show();
@@ -63,7 +62,7 @@ public class PinActivity extends AppCompatActivity {
     }
 
     public void onDialogButtonClick(View view){
-        dialogBox.dialogBoxButtonAction.onDialogBoxButtonClick();
+        dialogBox.angleDialogBoxInterface.onDialogBoxButtonClick();
     }
 
 }
