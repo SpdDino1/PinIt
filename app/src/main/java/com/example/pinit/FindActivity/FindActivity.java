@@ -33,6 +33,7 @@ public class FindActivity extends AppCompatActivity {
         new SensorManager(this, false, new SensorAngleResult() {
             @Override
             public void passResult(int azimuth, int roll) {
+                //TODO Add azimuth and roll locks
                 manager.drawCircle(azimuth+180,roll+180);
             }
         });

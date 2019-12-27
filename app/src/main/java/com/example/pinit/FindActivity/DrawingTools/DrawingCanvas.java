@@ -28,7 +28,7 @@ public class DrawingCanvas extends View {
         myCanvas = new Canvas(bitmap);
 
         paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.BLACK);
+        paint.setColor(Color.YELLOW);
     }
 
     @Override

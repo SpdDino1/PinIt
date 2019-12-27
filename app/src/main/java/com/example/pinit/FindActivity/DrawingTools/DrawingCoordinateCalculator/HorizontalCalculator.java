@@ -1,14 +1,12 @@
 package com.example.pinit.FindActivity.DrawingTools.DrawingCoordinateCalculator;
 
 public class HorizontalCalculator {
-    private int screenWidth;
     private int targetOffsetAzimuth;
 
     private float halfScreenWidth;
     private float scalingFactor;
 
     public HorizontalCalculator(int screenWidth,int offsetAzimuth) {
-        this.screenWidth = screenWidth;
         this.targetOffsetAzimuth=offsetAzimuth;
 
         this.halfScreenWidth=screenWidth/2;
