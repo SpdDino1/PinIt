@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pinit.AngleDialogBox.AngleDialogBox;
 import com.example.pinit.AngleDialogBox.AngleDialogBoxInterface;
 import com.example.pinit.SensorManager.SensorAngleResult;
+import com.example.pinit.SensorManager.SensorConstants;
 import com.example.pinit.SensorManager.SensorManager;
 import com.example.pinit.R;
 
@@ -32,7 +34,18 @@ public class PinActivity extends AppCompatActivity {
         new SensorManager(this, true, new SensorAngleResult() {
 
             @Override
-            public void passResult(final int azimuth,final int roll) {
+            public void passResult(final int azimuth,final int roll,int pitch) {
+
+                //Check pitch (Phone tilt)
+                if(Math.abs(pitch)> SensorConstants.pitchLimit){
+                    Toast.makeText(PinActivity.this, "Keep screen parallel to eyes", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                //Check roll (Beyond hemisphere)
+                else if(roll>SensorConstants.rollLimit){
+                    Toast.makeText(PinActivity.this, "Invalid roll. Turn around and pin target", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 //Display dialog box
                 dialogBox = new AngleDialogBox(
@@ -45,7 +58,6 @@ public class PinActivity extends AppCompatActivity {
 
                             @Override
                             public void customizeDialogBox(ViewGroup dialogBaseView) {
-                                //TODO Check azimuth and roll angle
                                 LinearLayout rowOne= dialogBaseView.findViewById(R.id.dialogBoxRowOne);
                                 rowOne.removeViewAt(2);
                                 TextView azimuthTextView= (TextView)rowOne.getChildAt(1);
