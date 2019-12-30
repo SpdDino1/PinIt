@@ -21,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         PermissionManager.getCameraPermission(this);
-
-        //TODO Add app icon and release apk
     }
 
     public void onPinButtonClick(View button){
