@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="markerColor">#eff702</color>
+    <color name="alertTextViewBackground">#000000</color>
 </resources>

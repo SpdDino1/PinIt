@@ -36,12 +36,12 @@ public class PinActivity extends AppCompatActivity {
 
                 //Check pitch (Phone tilt)
                 if(Math.abs(pitch)> SensorConstants.pitchLimit){
-                    Toast.makeText(PinActivity.this, "Keep screen parallel to eyes", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PinActivity.this, R.string.alertTextViewInvalidPitch, Toast.LENGTH_SHORT).show();
                     return;
                 }
                 //Check roll (Beyond hemisphere)
                 else if(roll>SensorConstants.rollLimit){
-                    Toast.makeText(PinActivity.this, "Invalid roll. Turn around and pin target", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PinActivity.this, R.string.alertTextViewInvalidRoll, Toast.LENGTH_SHORT).show();
                     return;
                 }
 

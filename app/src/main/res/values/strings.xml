@@ -9,4 +9,7 @@
     <string name="dialogButtonText">Ok</string>
     <string name="dialogValidCharacters">0,1,2,3,4,5,6,7,8,9,-</string>
 
+    <string name="alertTextViewInvalidPitch">Keep screen parallel to eyes</string>
+    <string name="alertTextViewInvalidRoll">Invalid roll. Turn around and pin target</string>
+
 </resources>
