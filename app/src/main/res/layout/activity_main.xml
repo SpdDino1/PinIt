@@ -8,32 +8,58 @@
     android:orientation="horizontal"
     android:layout_gravity="center">
 
-    <Button
-        android:id="@+id/pinButton"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_weight="1"
-        android:text="@string/pinButtonText"
-        android:layout_margin="15dp"
-        android:layout_gravity="center"
-        android:textAllCaps="false"
-        android:onClick="onPinButtonClick"/>
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/pin_icon"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/pinButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pinButtonText"
+            android:layout_margin="15dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:onClick="onPinButtonClick"/>
+    </LinearLayout>
 
 
-    <Space
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.5" />
-
-    <Button
-        android:id="@+id/findButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_weight="1"
-        android:text="@string/findButtonText"
-        android:layout_margin="15dp"
-        android:layout_gravity="center"
-        android:textAllCaps="false"
-        android:onClick="onFindButtonClick"/>
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/find_icon"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/findButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/findButtonText"
+            android:layout_margin="15dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:onClick="onFindButtonClick"/>
+    </LinearLayout>
 
 </LinearLayout>

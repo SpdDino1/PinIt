@@ -21,7 +21,7 @@ public class AngleDialogBox extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_angle_dialog_box);
-        
+
         ViewGroup contentView=(ViewGroup) ((ViewGroup) this.findViewById(android.R.id.content)).getChildAt(0); //Dialog baseView
         angleDialogBoxInterface.customizeDialogBox(contentView);
     }
