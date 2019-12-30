@@ -24,6 +24,8 @@ public class PinActivity extends AppCompatActivity {
         getSupportActionBar().hide(); //Hide action bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN); //Hide title bar
         setContentView(R.layout.activity_pin);
+
+        //TODO Design better capture button
     }
 
     public void onCaptureButtonClick(View v){
