@@ -14,7 +14,7 @@ import com.example.pinit.PinActivity.PinActivity;
 
 public class MainActivity extends AppCompatActivity {
     private DialogBoxHelper helperDialogBox;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

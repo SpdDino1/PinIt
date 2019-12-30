@@ -18,12 +18,14 @@
         android:gravity="center"
         android:text="@string/pinActivityMarker"/>
 
-    <Button
+    <ImageButton
+        android:id="@+id/imageButton"
         android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:text="O"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/crosshair_icon"
+        android:onClick="onCaptureButtonClick"
         android:layout_gravity="center_vertical|end"
         android:layout_marginRight="5dp"
-        android:onClick="onCaptureButtonClick"/>
+        android:background="@drawable/round_button"/>
 
 </FrameLayout>

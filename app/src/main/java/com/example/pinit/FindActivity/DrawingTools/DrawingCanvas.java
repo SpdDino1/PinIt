@@ -9,6 +9,8 @@ import android.graphics.PorterDuff;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.example.pinit.R;
+
 public class DrawingCanvas extends View {
     private Bitmap bitmap;
     private Canvas myCanvas;
@@ -28,7 +30,7 @@ public class DrawingCanvas extends View {
         myCanvas = new Canvas(bitmap);
 
         paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.YELLOW);
+        paint.setColor(getResources().getColor(R.color.markerColor));
     }
 
     @Override
